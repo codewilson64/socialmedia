@@ -1,0 +1,40 @@
+import express from 'express'
+import dotenv from 'dotenv'
+import mongoose from 'mongoose'
+import cors from 'cors'
+import cookieParser from 'cookie-parser'
+import { v2 as cloudinary } from 'cloudinary'
+
+dotenv.config()
+
+const app = express()
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+})
+
+
+// middleware
+app.use(express.json({limit: '5mb'}))
+app.use(cors())
+app.use(cookieParser())
+
+import authRoutes from './routes/auth.routes.js'
+import userRoutes from './routes/user.routes.js'
+import postRoutes from './routes/post.routes.js'
+
+// routes
+app.use('/api/auth', authRoutes)
+app.use('/api/user', userRoutes)
+app.use('/api/post', postRoutes)
+
+// mongoose
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log(`Db connected...running on server ${process.env.PORT}`)
+    })
+  })
+  .catch(error => console.log(error.message))
