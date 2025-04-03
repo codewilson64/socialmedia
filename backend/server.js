@@ -6,7 +6,6 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import { v2 as cloudinary } from 'cloudinary'
 
-// For deployment
 
 dotenv.config()
 
@@ -34,6 +33,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/post', postRoutes)
 
+// For deployment
 if(process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/dist")))
   app.get("*", (req, res) => {
