@@ -16,7 +16,7 @@ function App() {
   const { authUser } = useContext(AuthContext)
 
   return (
-    <div className="flex flex-col w-[600px] mx-auto">
+    <div className="flex flex-col mx-auto">
       {authUser && <Header />} 
       <Routes>
         <Route path="/" element={authUser ? <HomePage/> : <Navigate to='/login'/>} />
