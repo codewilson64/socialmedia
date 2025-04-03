@@ -27,8 +27,8 @@ const Comments = ({ comment }) => {
             </Link>
 
             <div className='flex items-center text-sm text-slate-500 gap-3'>
-              <p>1d</p>
-              <MdOutlineMoreHoriz />
+
+              {/* <MdOutlineMoreHoriz /> */}
             </div>
         </div>
 

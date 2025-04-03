@@ -68,7 +68,7 @@ const Post = ({ post, user }) => {
           <div className="dropdown dropdown-end">
             <MdOutlineMoreHoriz size={20} cursor={"pointer"} tabIndex={0} role="button"/>
             {authUser._id === post.user._id && (
-                <ul tabIndex={0} className="dropdown-content menu rounded-box text-black font-semibold z-[1] w-52 p-2 shadow">
+                <ul tabIndex={0} className="dropdown-content menu rounded-box text-black bg-white font-semibold border border-slate-300/50 w-52 p-2 drop-shadow-xl">
                   <li onClick={() => handleDelete(post._id)}><a>Delete</a></li>
                 </ul>             
             )}

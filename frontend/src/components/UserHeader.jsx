@@ -80,7 +80,7 @@ const UserHeader = ({ userProfile }) => {
       <div className='flex justify-between'>
         <p className='text-sm text-slate-500 font-normal'>{userProfile?.followers?.length} followers</p>
         <div className='flex gap-3'>
-          <FaInstagram size={24} cursor={"pointer"}/>
+          {/* <FaInstagram size={24} cursor={"pointer"}/> */}
           <div className="dropdown dropdown-end">
             <CgMoreO size={24} cursor={"pointer"} tabIndex={0} role="button"/>
               <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
@@ -90,15 +90,15 @@ const UserHeader = ({ userProfile }) => {
         </div>
       </div>
       
-      <div className="flex cursor-pointer mb-3">
+      <div className="flex cursor-pointer mb-3 border-b border-slate-300">
         <div className='relative flex-1 text-center py-3' onClick={() => setFeedType('posts')}>
-          <p className='font-semibold text-slate-600'>Posts</p>       
-          {feedType === 'posts' && <div className="absolute w-full h-[1px] left-0 bottom-0 rounded-full bg-slate-600"></div>}
+          <p className='font-semibold text-lg text-black'>Posts</p>       
+          {/* {feedType === 'posts' && <div className="absolute w-full h-[1px] left-0 bottom-0 rounded-full bg-slate-600"></div>} */}
         </div>
-        <div className='relative flex-1 text-center py-3' onClick={() => setFeedType('replies')}>
+        {/* <div className='relative flex-1 text-center py-3' onClick={() => setFeedType('replies')}>
           <p className='font-semibold text-slate-600'>Replies</p>  
           {feedType === 'replies' && <div className="absolute w-full h-[1px] right-0 bottom-0 rounded-full bg-slate-600"></div>}     
-        </div>
+        </div> */}
       </div>
     </div>
   )
