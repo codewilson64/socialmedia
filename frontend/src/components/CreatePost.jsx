@@ -47,7 +47,10 @@ const CreatePost = () => {
         <div className='flex items-center gap-3'>
           <CiImageOn className='w-7 h-7 cursor-pointer' onClick={() => imageRef.current.click()}/>
           <input type='file' accept='image/*' hidden ref={imageRef} onChange={handleImageChange}/>
-          <button disabled={isLoading} className='w-[70px] font-bold text-white bg-blue-500 rounded-full py-2'>
+          <button 
+            disabled={isLoading} 
+            className={`${isLoading && 'w-[90px]'} w-[70px] font-bold text-white text-center bg-blue-500 rounded-full py-2`}
+          >
             {isLoading ? 'Posting...' : 'Post'}
           </button>
           {error && <div className='text-red-400'>{error}</div>}

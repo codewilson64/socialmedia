@@ -10,6 +10,10 @@ import { Link } from 'react-router-dom';
 const Comments = ({ comment }) => {
   const [liked, setLiked] = useState(false)
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   return (
     <div className='flex flex-col border border-t-0 border-l-0 border-r-0 border-slate-300 px-6 py-3'>
       <div className='flex gap-4'>
@@ -20,7 +24,7 @@ const Comments = ({ comment }) => {
 
       <div className='flex flex-col w-full'>
         <div className='flex justify-between mb-3 mt-3'>
-            <Link to={`/${comment.user.username}`} className='flex items-center gap-3'>
+            <Link to={`/${comment.user.username}`} className='flex items-center gap-3' onClick={scrollToTop}>
               <div>
                 <p className='font-semibold'>{comment.user.fullName}</p>
               </div>
@@ -38,7 +42,7 @@ const Comments = ({ comment }) => {
 
       {/* Actions */}
         <div className='flex gap-8'>
-            <div className="flex gap-1 items-center">
+            {/* <div className="flex gap-1 items-center">
                 <FaRegHeart 
                     size={18} 
                     color={liked ? 'red' : ''} 
@@ -51,12 +55,12 @@ const Comments = ({ comment }) => {
             <div className="flex gap-1 items-center">
                 <FaRegComment size={18} className="cursor-pointer"/>
                 <span className="text-gray-700 text-sm"></span>
-            </div>
+            </div> */}
                   
-            <div className="flex gap-1 items-center">
+            {/* <div className="flex gap-1 items-center">
                 <FaRegShareSquare size={18} className="cursor-pointer"/>
                 <span className="text-gray-700 text-sm"></span>
-            </div>
+            </div> */}
         </div>
 
       </div>

@@ -10,13 +10,13 @@ const useUpdateProfile = () => {
 
   const { dispatch } = useContext(AuthContext)
 
-  const updateProfile = async (fullName, username, bio, password, imageUrl) => {
+  const updateProfile = async (fullName, username, bio, oldPassword, password, imageUrl) => {
     setIsLoading(true)
     setError(null)
     
     const response = await fetch('/api/user/update', {
       method: 'PUT',
-      body: JSON.stringify({fullName, username, bio, password, profileImg: imageUrl}),
+      body: JSON.stringify({fullName, username, bio, oldPassword, password, profileImg: imageUrl}),
       headers: { 'Content-Type': 'application/json' }
     })
   

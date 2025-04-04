@@ -10,6 +10,7 @@ const UpdateProfilePage = () => {
   const [fullName, setFullName] = useState(authUser.fullName);
   const [username, setUsername] = useState(authUser.username);
   const [bio, setBio] = useState(authUser.bio);
+  const [oldPassword, setOldPassword] = useState('')
   const [password, setPassword] = useState('')
 
   const fileRef = useRef(null)
@@ -20,7 +21,7 @@ const UpdateProfilePage = () => {
 
   const handleUpdate = async (e) => {
     e.preventDefault()
-    await updateProfile(fullName, username, bio, password, imageUrl)
+    await updateProfile(fullName, username, bio, oldPassword, password, imageUrl)
   }
 
   return (
@@ -68,7 +69,13 @@ const UpdateProfilePage = () => {
             />
             <input 
               className="flex-1 p-3 rounded-lg outline-none border border-gray-500" 
-              placeholder="Password" 
+              placeholder="Old Password" 
+              value={oldPassword} 
+              onChange={(e) => setOldPassword(e.target.value)} 
+            />
+            <input 
+              className="flex-1 p-3 rounded-lg outline-none border border-gray-500" 
+              placeholder="New Password" 
               value={password} 
               onChange={(e) => setPassword(e.target.value)} 
             /> 

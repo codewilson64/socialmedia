@@ -25,6 +25,10 @@ const Post = ({ post, user }) => {
   const { commentPost, isLoading, error } = useCommentPost()
   const { deletePost } = useDeletePost()
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   // Handle Like Post
   const handleLikePost = async () => {
     const response = await fetch(`/api/post/like/${post._id}`, {
@@ -56,7 +60,7 @@ const Post = ({ post, user }) => {
 
     <div className='flex flex-col w-full'>
       <div className='flex justify-between mb-3 mt-3'>
-        <Link to={`/${user.username}`} className='flex items-center gap-3'>
+        <Link to={`/${user.username}`} className='flex items-center gap-3' onClick={scrollToTop}>
             <div>
               <p className='font-semibold'>{user.fullName}</p>
             </div>
@@ -136,10 +140,10 @@ const Post = ({ post, user }) => {
               <span className="text-gray-700 text-sm">{post.comments.length}</span>
             </div>
       
-            <div className="flex gap-1 items-center">
+            {/* <div className="flex gap-1 items-center">
               <FaRegShareSquare size={18} className="cursor-pointer"/>
               <span className="text-gray-700 text-sm"></span>
-            </div>
+            </div> */}
       </div>
       
     </div>
