@@ -19,7 +19,7 @@ const LoginPage = () => {
           <h1 className='text-4xl font-extrabold text-black mb-3'>Let's go.</h1>
           <div className='w-[300px] flex flex-col gap-4'>
           <div className='flex flex-col'>
-            <label className='mb-2'>Username:</label>
+            <label className='mb-2'>Username: <span className='font-bold'>user123</span></label>
             <input 
               className='border border-gray-500 px-3 py-2 outline-none'
               type="text" 
@@ -28,7 +28,7 @@ const LoginPage = () => {
             />
           </div>
           <div className='flex flex-col'>
-            <label className='mb-2'>Password:</label>
+            <label className='mb-2'>Password: <span className='font-bold'>abcABC123#</span></label>
             <input
               className='border border-gray-500 px-3 py-2 outline-none' 
               type="password" 
@@ -38,13 +38,13 @@ const LoginPage = () => {
           </div>
           </div>
           <div className='flex flex-col mt-4 gap-3'>
-            <button disabled={isLoading} className='w-full bg-blue-500 text-white rounded-full py-3'>
+            <button disabled={isLoading} className='w-full bg-black text-white rounded-full py-3'>
               {isLoading ? 'Loading...' : 'Login'}
             </button>      
             {error && <p className='text-red-400'>{error}</p>}
             <p>Don't have an account?</p>
             <Link to={'/signup'}>
-              <button className='w-full text-blue-500 border-2 border-blue-500 rounded-full py-3'>Sign up</button>
+              <button className='w-full text-black border-2 border-black rounded-full py-3'>Sign up</button>
             </Link>
         </div>
         </form>

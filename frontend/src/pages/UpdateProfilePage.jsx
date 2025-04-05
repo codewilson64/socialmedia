@@ -34,7 +34,7 @@ const UpdateProfilePage = () => {
       </button>
         <dialog id="edit_profile_modal" className="modal">
 
-        <div className="modal-box">
+        <div className="modal-box bg-white">
         <h3 className="font-bold text-lg mb-5">Update Profile</h3>
           <form className="flex flex-col gap-4" onSubmit={handleUpdate}>
             <div className="rounded-full mx-auto">
@@ -80,7 +80,7 @@ const UpdateProfilePage = () => {
               onChange={(e) => setPassword(e.target.value)} 
             /> 
             <button 
-              className='w-full font-bold text-white bg-blue-500 rounded-full py-2'
+              className='w-full font-bold text-white bg-black rounded-full py-2'
               disabled={isLoading}
               type='submit'
             >

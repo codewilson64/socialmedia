@@ -112,7 +112,7 @@ const Post = ({ post, user }) => {
                 onClick={()=>document.getElementById('comment_modal' + post._id).showModal()}
               />
                 <dialog id={`comment_modal${post._id}`} className="modal">
-                  <div className="modal-box">
+                  <div className="modal-box bg-white">
                     <div className='p-3'>
                       <h3 className="text-black font-bold text-lg">Comments</h3>
                     </div>
@@ -126,7 +126,7 @@ const Post = ({ post, user }) => {
                       />
                       <button 
                         disabled={isLoading}
-                        className='w-[70px] font-bold text-white bg-blue-500 rounded-full py-2'
+                        className='w-[70px] font-bold text-white bg-black rounded-full py-2'
                         onClick={() => handlePostComment(post._id)}
                         >
                         {isLoading ? 'Posting...' : 'Post'}

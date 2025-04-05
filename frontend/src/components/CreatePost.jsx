@@ -49,7 +49,7 @@ const CreatePost = () => {
           <input type='file' accept='image/*' hidden ref={imageRef} onChange={handleImageChange}/>
           <button 
             disabled={isLoading} 
-            className={`${isLoading && 'w-[90px]'} w-[70px] font-bold text-white text-center bg-blue-500 rounded-full py-2`}
+            className={`${isLoading && 'w-[90px]'} w-[70px] font-bold text-white text-center bg-black rounded-full py-2`}
           >
             {isLoading ? 'Posting...' : 'Post'}
           </button>
