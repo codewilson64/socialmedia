@@ -4,6 +4,7 @@ import { MdOutlineMoreHoriz } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegComment } from "react-icons/fa";
 import { FaRegShareSquare } from "react-icons/fa";
+import blankProfile from '../public/blankProfile.webp'
 
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -55,7 +56,7 @@ const Post = ({ post, user }) => {
   return (
     <div className='flex gap-4 border border-t-0 border-l-0 border-r-0 border-gray-300 px-6 py-3'>       
       <div className='w-[60px]'>
-        <img src={user.profileImg} alt="image" className="w-12 h-12 rounded-full object-cover"/>    
+        <img src={user.profileImg || blankProfile} alt="image" className="w-12 h-12 rounded-full object-cover"/>    
       </div>
 
     <div className='flex flex-col w-full'>

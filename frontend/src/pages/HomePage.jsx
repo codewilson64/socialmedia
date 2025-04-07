@@ -12,7 +12,7 @@ const HomePage = () => {
   useEffect(() => {
     setIsLoading(true)
 
-    const getFollowingPosts = async () => {
+    const getPosts = async () => {
       const response = await fetch('/api/post/')
       const data = await response.json()
 
@@ -26,18 +26,18 @@ const HomePage = () => {
         setIsLoading(false)
       }
     }
-    getFollowingPosts()
+    getPosts()
   }, [])
 
   return (
     <div className='w-[600px] mx-auto flex flex-col border border-slate-300 rounded-3xl'>
       <CreatePost />
 
-      {isLoading && (
+      {/* {isLoading && (
         <div className='flex justify-center items-center p-12'>
           <h3>Loading posts...</h3>
         </div>
-      )}
+      )} */}
       {!isLoading && posts?.length === 0 && (
         <div className='flex justify-center items-center p-12'>
           <h1>Follow some users to see their posts.</h1>

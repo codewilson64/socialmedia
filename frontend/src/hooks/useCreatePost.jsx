@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import {  useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const useCreatePost = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(false)
+
+  const navigate = useNavigate()
 
   const createPost = async (text, imageUrl) => {
     setIsLoading(true)
@@ -23,7 +26,8 @@ const useCreatePost = () => {
 
     if(response.ok) {
       setIsLoading(false)
-      console.log('Post success')
+      navigate('/refresh')
+      navigate(-1)
     }
   }
 
