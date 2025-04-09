@@ -32,18 +32,20 @@ const UserPage = () => {
   },[username])
 
   return (
-    <div className='w-[600px] mx-auto border border-slate-300 rounded-3xl'>
-      <UserHeader userProfile={userProfile} />  
+    <div className='max-w-[600px] w-full mx-auto'>   
+      <div className='border border-slate-300 rounded-3xl'>
+        <UserHeader userProfile={userProfile} />  
 
-      {userPosts.length === 0 && (
-        <div className='flex justify-center items-center p-20'>
-          <h1 className='text-sm text-slate-500 font-normal'>You have no posts.</h1>
-        </div>
-      )}
+        {userPosts.length === 0 && (
+          <div className='flex justify-center items-center p-20'>
+            <h1 className='text-sm text-slate-500 font-normal'>You have no posts.</h1>
+          </div>
+        )}
 
-      {userPosts.map((post) => (
-        <Post key={post._id} post={post} user={post.user}/>
-      ))}
+        {userPosts.map((post) => (
+          <Post key={post._id} post={post} user={post.user}/>
+        ))}
+      </div>
     </div>
   )
 }

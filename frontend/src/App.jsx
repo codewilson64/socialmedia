@@ -16,8 +16,12 @@ function App() {
   const { authUser } = useContext(AuthContext)
 
   return (
-    <div className="flex flex-col mx-auto">
-      {authUser && <Header />} 
+    <div className="w-full overflow-hidden">
+      <div className="px-4 sm:px-16 flex justify-center items-center">
+        <div className="max-w-[600px] w-full">
+          {authUser && <Header />} 
+        </div>
+      </div>
       <Routes>
         <Route path="/" element={authUser ? <HomePage/> : <Navigate to='/login'/>} />
         <Route path="/signup" element={!authUser ? <SignupPage /> : <Navigate to='/'/>}/>

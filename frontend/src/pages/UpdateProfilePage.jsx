@@ -48,13 +48,13 @@ const UpdateProfilePage = () => {
             <input type="file" hidden ref={fileRef} onChange={handleImageChange}/>
             <div className="flex gap-2">
               <input 
-                className="flex-1 p-3 rounded-lg outline-none border border-gray-500" 
+                className="w-full p-3 rounded-lg outline-none border border-gray-500" 
                 type="text" 
                 placeholder="Fullname" 
                 value={fullName} 
                 onChange={(e) => setFullName(e.target.value)} />
               <input 
-                className="flex-1 p-3 rounded-lg outline-none border border-gray-500" 
+                className="w-full p-3 rounded-lg outline-none border border-gray-500" 
                 type="text" 
                 placeholder="Username" 
                 value={username} 

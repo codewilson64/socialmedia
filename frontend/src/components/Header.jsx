@@ -10,7 +10,7 @@ const Header = () => {
   const { authUser } = useContext(AuthContext)
 
   return (
-    <div className='relative w-[600px] mx-auto flex justify-center items-center py-4'>
+    <div className='relative w-full flex justify-center items-center py-4'>
       <Link to='/'>
       <div className='flex items-center gap-1'>
         <MdOutlineAddAPhoto size={24}/>
@@ -21,14 +21,13 @@ const Header = () => {
       <div className='absolute right-3'>
         <div className='flex items-center gap-2'>
           <Link to={`/${authUser?.username}`}>
-            <FaRegUser className='w-8 h-8 sm:w-5 sm:h-5' />
+            <FaRegUser className='w-5 h-5' />
           </Link>
           <div>
             {authUser && <LogoutButton/>}
           </div>
         </div>
-
-        
+   
       </div>
     </div>
   )

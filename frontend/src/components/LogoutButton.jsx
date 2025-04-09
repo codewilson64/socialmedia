@@ -12,7 +12,7 @@ const LogoutButton = () => {
   return (
     <div>
       <MdLogout 
-        className='w-9 h-9 sm:w-5 sm:h-5 cursor-pointer'
+        className='w-5 h-5 cursor-pointer'
         onClick={handleLogout}
       />
     </div>

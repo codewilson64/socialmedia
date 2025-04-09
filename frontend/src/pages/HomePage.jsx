@@ -30,23 +30,25 @@ const HomePage = () => {
   }, [])
 
   return (
-    <div className='w-[600px] mx-auto flex flex-col border border-slate-300 rounded-3xl'>
-      <CreatePost />
+    <div className='max-w-[600px] w-full mx-auto'>
+      <div className='flex flex-col border border-slate-300 rounded-3xl'>
+        <CreatePost />
 
-      {/* {isLoading && (
-        <div className='flex justify-center items-center p-12'>
-          <h3>Loading posts...</h3>
-        </div>
-      )} */}
-      {!isLoading && posts?.length === 0 && (
-        <div className='flex justify-center items-center p-12'>
-          <h1>Follow some users to see their posts.</h1>
-        </div>
-      )}
+        {/* {isLoading && (
+          <div className='flex justify-center items-center p-12'>
+            <h3>Loading posts...</h3>
+          </div>
+        )} */}
+        {!isLoading && posts?.length === 0 && (
+          <div className='flex justify-center items-center p-12'>
+            <h1>Follow some users to see their posts.</h1>
+          </div>
+        )}
 
-      {posts.map((post) => (
-        <Post key={post._id} post={post} user={post.user}/>
-      ))}
+        {posts.map((post) => (
+          <Post key={post._id} post={post} user={post.user}/>
+        ))}
+      </div>
     </div>
   )
 }
